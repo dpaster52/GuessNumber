@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         numToGuess = Int(arc4random_uniform(100))+1
     }
     func checkGuess(_ guess:Int) {
+        
         if guess < lowerBound || guess > upperBound {
             showBoundsAlert()
 //            guessResponse.text = "Your guess should be between 1 and 100!"
@@ -50,9 +51,11 @@ class ViewController: UIViewController {
         } else if guess < numToGuess {
             guessResponse.text = "Higher! ⬆️"
             guessResponse.textColor = UIColor.red
+            guessTextField.text=""
         } else if guess > numToGuess {
             guessResponse.text = "Lower! ⬇️"
             guessResponse.textColor = UIColor.red
+            guessTextField.text=""
         } else {
 //            guessResponse.text = "You win!"
 //            guessResponse.textColor = UIColor.green
